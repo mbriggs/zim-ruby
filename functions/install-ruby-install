@@ -1,0 +1,12 @@
+version="0.8.1"
+dir="ruby-install-$version"
+tarball="ruby-install-$version.tar.gz"
+url="https://github.com/postmodern/ruby-install/archive/v$version.tar.gz"
+
+wget -O "$tarball" "$url"
+tar -xzvf "$tarball"
+rm "$tarball"
+pushd "$dir" || exit 1
+sudo make install
+popd
+rm -rf "$dir"
